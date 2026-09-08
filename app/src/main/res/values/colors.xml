@@ -2,4 +2,6 @@
 <resources>
     <color name="source_build_primary">#6750A4</color>
     <color name="source_build_secondary">#625B71</color>
+    <color name="source_build_background">#FFFFFF</color>
+    <color name="source_build_black">#000000</color>
 </resources>
