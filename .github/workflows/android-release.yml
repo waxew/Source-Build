@@ -18,11 +18,21 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      - name: Grant execute permission
+        run: chmod +x ./gradlew
+
+      - name: Verify Gradle Wrapper
+        run: ./gradlew --version
+
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Verify APK
+        run: ls -la app/build/outputs/apk/debug/
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-debug-apk
           path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
