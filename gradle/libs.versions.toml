@@ -1,12 +1,14 @@
 [versions]
 agp = "8.5.2"
-kotlin = "2.0.20"
+kotlin = "2.0.21"
 coreKtx = "1.13.1"
 appcompat = "1.7.0"
+activity = "1.9.2"
 
 [libraries]
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-activity = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
