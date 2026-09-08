@@ -1,6 +1,9 @@
 <resources>
     <style name="Theme.SourceBuild" parent="android:style/Theme.Material.Light.NoActionBar">
         <item name="android:fontFamily">sans</item>
+        <item name="android:windowActionModeOverlay">true</item>
         <item name="android:colorAccent">@color/purple_500</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>
