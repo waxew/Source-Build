@@ -24,17 +24,11 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Grant execute permission
-        run: chmod +x ./gradlew
-
-      - name: Verify Gradle
-        run: ./gradlew --version
-
-      - name: Clean Build
-        run: ./gradlew clean
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --stacktrace
+        run: gradle clean assembleDebug --stacktrace
 
       - name: Verify APK Output
         run: ls -la app/build/outputs/apk/debug/
