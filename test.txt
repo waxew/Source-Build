@@ -1,2 +1,0 @@
-GitHub write access test file.
-Source-Build repository connection verified.
