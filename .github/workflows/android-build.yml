@@ -19,12 +19,26 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: gradle
+
+      - name: Grant execute permission
+        run: chmod +x ./gradlew
+
+      - name: Verify Gradle
+        run: ./gradlew --version
+
+      - name: Clean Build
+        run: ./gradlew clean
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug --stacktrace
 
-      - name: Upload APK
+      - name: Verify APK Exists
+        run: ls -la app/build/outputs/apk/debug/
+
+      - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: app-debug-apk
+          name: Source-Build-debug-apk
           path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
